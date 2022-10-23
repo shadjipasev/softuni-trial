@@ -1,0 +1,40 @@
+function goingHome(input){
+    let index = 0;
+    let target = 10000;
+    let command = input[index];
+    index++;
+    let totalSteps = 0;
+    
+
+
+    while(command !== "Going home"){
+       let currentSteps = Number(command);
+       totalSteps += currentSteps;
+        
+        if(totalSteps >= target){
+            
+            console.log("Goal reached! Good job!");
+            console.log(`${diff} steps over the goal!`);
+            break;
+           }let diff = Math.abs(totalSteps - target);
+           
+           command = input[index];
+           index++
+        
+        
+
+
+    }
+    if(command === "Going home"){
+        let currentSteps = Number(input[index]);
+        index++
+        totalSteps += totalSteps;
+        if(totalSteps > )
+    }
+
+}goingHome(["1500",
+"300",
+"2500",
+"3000",
+"Going home",
+"200"])
