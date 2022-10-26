@@ -1,0 +1,32 @@
+function equalSumOfNumber(input){
+
+    startingNumber = Number(input[0]);
+    finishingNumber = Number(input[1]);
+
+    let textInNumber = "";
+
+    for(i = startingNumber; i <= finishingNumber; i++){
+        let currentNumber = i + "";
+        let oddSum = 0;
+        let evenSum = 0;
+        for(j = 0;j < currentNumber.length; j++){
+            let currentDigit = Number(currentNumber.charAt(j));
+            if(j % 2 === 0){
+               evenSum += currentDigit;
+            }else{
+               oddSum += currentDigit;
+            }
+        }
+        if (evenSum === oddSum){
+            textInNumber += `${i} `
+        }
+    } 
+
+    
+    console.log(textInNumber)
+
+
+
+}equalSumOfNumber(["100000",
+"100050"])
+ 
