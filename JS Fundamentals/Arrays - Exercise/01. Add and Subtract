@@ -1,0 +1,26 @@
+function solve(arry){
+
+    let originalArrySum = 0;
+    let secondArrySum = 0;
+    let newArry = [];
+
+for(let i = 0; i < arry.length; i++){
+  let currentDigit = Number(arry[i]);
+  originalArrySum += currentDigit;
+  if(currentDigit % 2 === 0){
+     currentDigit += i;
+     newArry.push(currentDigit)
+  }else{
+    currentDigit -= i;
+    newArry.push(currentDigit);
+  }
+      
+    secondArrySum += currentDigit;
+}
+console.log(newArry);
+console.log(originalArrySum);
+console.log(secondArrySum);
+
+
+
+}solve([5, 15, 23, 56, 35])
