@@ -1,0 +1,5 @@
+function firstAndLast(arry){
+
+    console.log(Number(arry.shift()) + Number(arry.pop()))
+
+}firstAndLast(['20', '30', '40'])
