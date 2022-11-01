@@ -1,0 +1,25 @@
+function solve(input){
+
+    let obj = {};
+
+    for(let man of input){
+        let info = man.split(" ");
+        let name = info[0];
+        let num = info[1];
+        
+        obj[name] = num;
+    }
+
+    for(let man in obj){
+        console.log(`${man} -> ${obj[man]}`)
+    }
+
+    console.log(obj)
+
+
+
+}solve(['Tim 0834212554',
+'Peter 0877547887',
+'Bill 0896543112',
+'Tim 0876566344']
+)
