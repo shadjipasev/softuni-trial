@@ -1,0 +1,15 @@
+function solve(number) {
+
+    number = number.toString()
+    let sumOfDigits = 0;
+
+    for (let i = 0; i < number.length; i++){
+      let currentDigit = number.charAt(i);
+      sumOfDigits += Number(currentDigit)
+    }
+    
+    console.log(sumOfDigits)
+
+} solve(245678)
+solve(97561)
+solve(543)
