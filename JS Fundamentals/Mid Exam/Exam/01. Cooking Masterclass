@@ -1,0 +1,50 @@
+function cooking(input) {
+
+    let budget = Number(input[0]);
+    let students = Number(input[1]);
+    let priceFlour = Number(input[2]);
+    let singeEgg = Number(input[3]);
+    let singeApron = Number(input[4]);
+
+   
+
+    
+
+    let packageOfFlourCounter = 0;
+
+    for (let i = 1; i <= students; i++) {
+        
+        if (i % 5 === 0) {
+            packageOfFlourCounter++
+        }
+    }
+
+    let std = Math.ceil(students * 1.2)
+    
+    let totalAprons = singeApron * std;
+    let totalPackageOfFlour = (priceFlour * students) -(packageOfFlourCounter * priceFlour);
+    let totalEggs = (10 * singeEgg) * students;
+
+    let totalSum = totalAprons + totalPackageOfFlour + totalEggs;
+
+    /* console.log(totalSum.toFixed(2)) */
+    let diff = Math.abs(totalSum - budget)
+
+    if(totalSum <= budget){
+       console.log(`Items purchased for ${totalSum.toFixed(2)}$.`);
+    }else{
+       console.log(`${diff.toFixed(2)}$ more needed.`)
+    }
+
+
+} /* cooking([50,
+    2,
+    1.0,
+    0.10,
+    10.0]) */
+    cooking([100,
+        25,
+        4.0,
+        1.0,
+        6.0])
+        
