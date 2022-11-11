@@ -1,0 +1,46 @@
+function blackFlag(input) {
+
+    let daysOfPlunder = Number(input[0]);
+    let dailyPlunder = Number(input[1]);
+    let expectedPlunder = Number(input[2]);
+
+    let plunderGathered = 0;
+    let days = 1;
+
+    while (daysOfPlunder > 0) {
+
+        plunderGathered += dailyPlunder;
+
+        if (days % 3 === 0) {
+
+            plunderGathered += dailyPlunder / 2;
+
+        }
+
+        if (days % 5 === 0) {
+
+            plunderGathered = plunderGathered - (plunderGathered * 0.3);
+
+        }
+
+        daysOfPlunder--
+        days++;
+
+    }
+
+    let percentagePlunder = (plunderGathered / expectedPlunder) * 100
+
+    if (plunderGathered >= expectedPlunder) {
+        console.log(`Ahoy! ${plunderGathered.toFixed(2)} plunder gained.`)
+    } else {
+        console.log(`Collected only ${percentagePlunder.toFixed(2)}% of the plunder.`);
+    }
+
+
+
+
+} blackFlag(["5",
+"40",
+"100"])
+
+  blackFlag(["10","20","380"])
