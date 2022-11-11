@@ -1,0 +1,24 @@
+function employedes(input) {
+
+    let res = {};
+    for (let name of input) {
+        let number = name.length;
+        res[name] = number;
+
+    }
+
+    for(let employee of Object.entries(res)){
+        console.log(`Name: ${employee[0]} -- Personal Number: ${employee[1]}`)
+    }
+
+
+
+
+
+} employedes([
+    'Silas Butler',
+    'Adnaan Buckley',
+    'Juan Peterson',
+    'Brendan Villarreal'
+]
+)
