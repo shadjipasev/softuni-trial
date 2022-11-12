@@ -1,0 +1,22 @@
+function solve(input){
+
+let totalMoney = 0;
+console.log("Bought furniture:");
+for(let line of input){
+    if(line === "Purchase"){
+        break;
+    }
+    let patt = />>(?<name>[A-Za-z]+)<<(?<price>\d+(.\d+)?)!(?<quantity>\d+)/;
+    let res = patt.exec(line);
+    if(res !== null){
+    totalMoney += Number(res.groups.price) * Number(res.groups.quantity);
+    console.log(res.groups.name)
+    }
+}
+console.log(`Total money spend: ${totalMoney.toFixed(2)}`)
+
+}
+solve(['>>Sofa<<312.23!3',
+'>>TV<<300!5',
+'>Invalid<<!5',
+'Purchase'])
