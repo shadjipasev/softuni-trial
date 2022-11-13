@@ -1,0 +1,8 @@
+function solve(word, text) {}
+
+while(text.indexOf(word) == -1){
+    
+    text = text.replace()
+}
+
+solve("great", "softuni is ***** place for learning new programming languages");
