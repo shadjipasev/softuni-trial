@@ -1,0 +1,61 @@
+function solve(input){
+
+    let key = input.shift();
+
+    for(let line of input){
+        let tokens = line.split(">>>");
+        let command = tokens[0];
+
+        let p1 = tokens[1];
+        let p2 = tokens[2];
+        let p3 = tokens[3];
+
+        if(command === "Slice"){
+            if(Number(p1) >= 0 && Number(p1) < key.length && Number(p2) >= 0 && Number(p2) < key.length){
+                let firstHalf = key.substring(0,Number(p1));
+                let secondHalf = key.substring(Number(p2));
+                key = firstHalf + secondHalf;
+                console.log(key);
+            } else{
+                console.log(key);
+            }
+        }else if(command === "Flip"){
+            if(p1 === "Upper"){
+                let slice = key.substring(Number(p2), Number(p3));
+                slice = slice.toUpperCase();
+                let firstHalf = key.substring(0,Number(p2));
+                let secondHalf = key.substring(Number(p3));
+                key = firstHalf + slice + secondHalf;
+                console.log(key)
+
+            }else if(p1 === "Lower"){
+            let slice = key.substring(Number(p2), Number(p3));
+            slice = slice.toLowerCase();
+            let firstHalf = key.substring(0,Number(p2));
+            let secondHalf = key.substring(Number(p3));
+            key = firstHalf + slice + secondHalf;
+            console.log(key)
+            }
+            
+        }else if(command === "Contains"){
+            if(key.includes(p1)){
+                console.log(`${key} contains ${p1}`);
+            }else{
+                console.log("Substring not found!");
+            }
+
+        }else if(command === "Generate"){
+            break;
+        }
+    }
+
+    console.log(`Your activation key is: ${key}`)
+
+
+}solve(["abcdefghijklmnopqrstuvwxyz",
+"Slice>>>2>>>6",
+"Flip>>>Upper>>>3>>>14",
+"Flip>>>Lower>>>5>>>7",
+"Contains>>>def",
+"Contains>>>deF",
+"Generate"])
